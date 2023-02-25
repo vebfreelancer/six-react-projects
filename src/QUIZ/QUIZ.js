@@ -26,7 +26,7 @@ const questions = [
 function Result({ correct, restart }) {
     return (
         <div className="result">
-            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt='' />
+            <img src="/assets/quiz.png" alt='' />
             <h3>You guessed {correct} answers from {questions.length}</h3>
             <button onClick={restart}>Try again</button>
         </div>
