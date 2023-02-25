@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.currency-convertor {
+    background-color: #f9f2ed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 576.8px) {
+        min-height: 65vh;
+    }
+}
+.currency-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.currency-wrapper {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', system-ui !important;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.input-currency {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    margin-top: 20px;
+    user-select: none;
+}
+
+.currency-title {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.currency-block {
+    input {
+        border-radius: 5px;
+        font-size: 3rem;
+        font-weight: bold;
+        padding: 20px 20px;
+        letter-spacing: 1.3px;
+        outline: none;
+        width: 100%;
+        border: 0;
+    }
+}
+
+.currency-to {
+    background-color: #16b67f;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.currencies-from{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+
+    li {
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: 700;
+        display: inline-flex;
+        justify-content: center;
+        flex: 1;
+
+        &:not(:last-child) {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        &:active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &.active {
+            background-color: #16b67f !important;
+            color: #fff;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .currencies-fromli {
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .currency-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+    }
+}
+
+@media (max-width: 767.8px) {
+    .currency-wrapper {
+        max-width: 500px;
+    }
+
+    .currency-block:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 479.8px) {
+    .currency-wrapper {
+        padding: 20px;
+    }
+
+    .currency-title {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .currency-block input {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    .input-currency {
+        margin-top: 10px;
+    }
+
+    .currencies-from{
+        flex-wrap: wrap;
+        position: relative;
+
+        li {
+            flex: 0 0 50%;
+        }
+
+        &::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.15);
+            display: block;
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

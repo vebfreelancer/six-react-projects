@@ -1,0 +1,70 @@
+.counter {
+    background-color: #f9f2ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+
+    @media (max-width: 576.8px) {
+        height: 60vh;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+
+        @media (max-width: 576.8px) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.counter-output {
+    color: #000;
+    font-size: 7rem;
+    margin: 0;
+    margin-bottom: 20px;
+
+    &.plus {
+        color: #2a9d8f;
+    }
+
+    &.minus {
+        color: #e63946;
+    }
+}
+.counter-increment,
+.counter-decrement {
+    background: transparent;
+    border: 2px solid transparent;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 15px;
+    padding: 10px 25px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.05s ease-in-out;
+    
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(2px);
+        box-shadow: none;
+    }
+}
+
+.counter-increment {
+    background-color: #e63946;
+    color: #fff;
+    box-shadow: 0 4px 0 darken(#e63946, 10%);
+    border: 1px solid darken(#e63946, 15%);
+}
+
+.counter-decrement {
+    background-color: #2a9d8f;
+    color: #fff;
+    box-shadow: 0 4px 0 darken(#2a9d8f, 10%);
+    border: 1px solid darken(#2a9d8f, 15%);
+}
