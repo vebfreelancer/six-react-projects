@@ -8,6 +8,8 @@ import './index.scss';
 
 function App() {
 
+  window.addEventListener('load', () => setTimeout(function(){document.body.style.opacity = '1'}, 200));
+
   return (
     <div className='App'>
       <PHOTO_GALLERY />

@@ -40,6 +40,8 @@
         text-align: center;
 
         img {
+            width: 150px;
+            height: 150px;
             margin-bottom: 20px;
         }
 
@@ -53,10 +55,6 @@
             background-color: darken(#ff006e, 3%);
             color: #fff;
             cursor: pointer;
-        }
-
-        img {
-            width: 150px;
         }
     }
 

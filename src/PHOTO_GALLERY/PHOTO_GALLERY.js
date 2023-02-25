@@ -20,11 +20,11 @@ export const PHOTO_GALLERY = () => {
     const createPaginationItems = cat => {
         let count;
         switch(cat) {
-        case 1: count = 1; break;
-        case 2: count = 1; break;
-        case 3: count = 2; break;
-        case 4: count = 2; break;
-        default: count = 5;
+            case 1: count = 1; break;
+            case 2: count = 1; break;
+            case 3: count = 2; break;
+            case 4: count = 2; break;
+            default: count = 5;
         }
         return count;
     };
@@ -80,18 +80,20 @@ export const PHOTO_GALLERY = () => {
                             .map((item, index)=> <Collection key={index} name={item.name} images={item.photos}/>)
                     }
                 </div>
-                <ul className="pagination">
-                    {
-                        [...Array(createPaginationItems(categoryId))].map((_, i) => 
-                            <li 
-                                key={i}
-                                className={page === i + 1 ? 'active' : ''}
-                                onClick={() => setPage(i + 1)}>
-                                    {i + 1}
-                            </li>
-                        )
-                    }
-                </ul>
+                {
+                    !isLoading && <ul className="pagination">
+                        {
+                            [...Array(createPaginationItems(categoryId))].map((_, i) => 
+                                <li 
+                                    key={i}
+                                    className={page === i + 1 ? 'active' : ''}
+                                    onClick={() => setPage(i + 1)}>
+                                        {i + 1}
+                                </li>
+                            )
+                        }
+                    </ul>
+                }
             </div>
         </section>
     );
